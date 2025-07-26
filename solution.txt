@@ -1,2 +1,28 @@
-Please add your pseudocode to this file
-And a written explanation of your solution
+# Please add your pseudocode to this file:
+
+function consecutiveSubstrings(string) {
+  const result = [];
+  for (let i = 0; i < string.length; i++) {
+    for (let j = i + 1; j <= string.length; j++) {
+      result.push(string.slice(i, j));
+    }
+  }
+  return result;
+}
+
+
+# Solution Explanation
+
+The function `consecutiveSubstrings` takes an input string and returns all possible consecutive substrings of that string. It uses two nested loops:
+- The outer loop picks the starting character of the substring.
+- The inner loop picks the ending character (one past the last character of the substring).
+For each pair of start and end, it slices the string and adds the substring to the result array.
+
+# Example
+
+Input: 'abc'
+Substrings: 'a', 'ab', 'abc', 'b', 'bc', 'c'
+
+# Time Complexity
+
+The time complexity is O(n^2), where n is the length of the input string. This is because for each character, it potentially creates up to `n` substrings.
